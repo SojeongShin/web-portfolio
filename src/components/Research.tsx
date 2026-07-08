@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { content } from "@/data/content";
 import { uiText } from "@/data/ui";
 import { useLocale } from "@/i18n/locale-context";
@@ -10,6 +12,8 @@ export default function Research() {
   const { researchAreas } = content[locale];
   const ui = uiText[locale];
   const [featured, ...rest] = researchAreas;
+  const [showDetails, setShowDetails] = useState(false);
+  const hasSlides = !!featured.slides && featured.slides.length > 0;
 
   return (
     <section id="research" className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
@@ -28,7 +32,7 @@ export default function Research() {
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
           {featured.description}
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap items-center gap-2">
           {featured.tags.map((tag) => (
             <span
               key={tag}
@@ -37,7 +41,50 @@ export default function Research() {
               {tag}
             </span>
           ))}
+          {hasSlides && (
+            <button
+              type="button"
+              onClick={() => setShowDetails((prev) => !prev)}
+              className="text-xs font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400"
+            >
+              {showDetails ? ui.research.hideDetails : ui.research.showDetails}
+            </button>
+          )}
         </div>
+
+        {showDetails && hasSlides && (
+          <div className="mt-6 space-y-5">
+            {featured.slides!.map((slide) => (
+              <div
+                key={slide.title}
+                className="overflow-hidden rounded-xl border border-indigo-100 bg-white dark:border-indigo-900/60 dark:bg-zinc-950"
+              >
+                {slide.imageUrl ? (
+                  <Image
+                    src={slide.imageUrl}
+                    alt={slide.title}
+                    width={slide.imageWidth ?? 1600}
+                    height={slide.imageHeight ?? 900}
+                    sizes="(max-width: 640px) 100vw, 768px"
+                    className="h-auto w-full"
+                  />
+                ) : (
+                  <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 text-xs text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600">
+                    {ui.research.imagePlaceholder}
+                  </div>
+                )}
+                <div className="p-5">
+                  <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                    {slide.title}
+                  </h4>
+                  <p className="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    {slide.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="mt-8 space-y-8 border-l border-zinc-200 pl-6 dark:border-zinc-800">

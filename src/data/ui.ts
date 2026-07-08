@@ -21,7 +21,12 @@ export const uiText: Record<
       awards: { eyebrow: string; title: string };
       contact: { eyebrow: string; title: string };
     };
-    research: { currentFocus: string };
+    research: {
+      currentFocus: string;
+      showDetails: string;
+      hideDetails: string;
+      imagePlaceholder: string;
+    };
     publications: { showDetails: string; hideDetails: string };
     experience: { educationLabel: string; teachingLabel: string; internationalLabel: string };
     links: { paper: string; code: string; demo: string; video: string };
@@ -49,7 +54,12 @@ export const uiText: Record<
       awards: { eyebrow: "Recognition", title: "Awards" },
       contact: { eyebrow: "Get in Touch", title: "Contact" },
     },
-    research: { currentFocus: "Current Focus" },
+    research: {
+      currentFocus: "Current Focus",
+      showDetails: "Show details",
+      hideDetails: "Hide details",
+      imagePlaceholder: "Image coming soon",
+    },
     publications: { showDetails: "Show details", hideDetails: "Hide details" },
     experience: {
       educationLabel: "Education",
@@ -85,7 +95,12 @@ export const uiText: Record<
       awards: { eyebrow: "수상", title: "수상 내역" },
       contact: { eyebrow: "연락하기", title: "연락처" },
     },
-    research: { currentFocus: "현재 연구" },
+    research: {
+      currentFocus: "현재 연구",
+      showDetails: "상세 보기",
+      hideDetails: "상세 접기",
+      imagePlaceholder: "이미지 추가 예정",
+    },
     publications: { showDetails: "상세 보기", hideDetails: "상세 접기" },
     experience: {
       educationLabel: "학력",

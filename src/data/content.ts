@@ -9,11 +9,14 @@ export type Profile = {
   email: string;
   resumeUrl: string;
   photoUrl: string;
-  links: {
-    github: string;
-    linkedin: string;
-    googleScholar: string;
-  };
+};
+
+export type ResearchSlide = {
+  title: string;
+  body: string;
+  imageUrl?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 };
 
 export type ResearchArea = {
@@ -22,6 +25,7 @@ export type ResearchArea = {
   description: string;
   tags: string[];
   featured?: boolean;
+  slides?: ResearchSlide[];
 };
 
 export type Publication = {
@@ -89,25 +93,37 @@ export const content: Record<Locale, ContentShape> = {
       name: "Sojeong Shin",
       title: "AI Researcher",
       tagline: "Large Language Models · Embeddings · Computer Vision",
-      bio: "M.S. Computer Science student at Stony Brook University, researching embedding reliability and calibration for language models. Previously built and deployed computer-vision systems for real-world measurement and human motion understanding, with work recognized by multiple awards.",
+      bio: "M.S. Computer Science student at Stony Brook University, researching embedding reliability and calibration for language models. Previously built and deployed computer-vision systems for real-world measurement and human motion understanding.",
       location: "Stony Brook, NY, USA",
       email: "sojeong.shin27@gmail.com",
       resumeUrl: "/resume.pdf",
       photoUrl: "/profile.png",
-      links: {
-        github: "https://github.com/yourhandle",
-        linkedin: "https://linkedin.com/in/yourhandle",
-        googleScholar: "https://scholar.google.com/citations?user=xxxx",
-      },
     },
     researchAreas: [
       {
         title: "Embedding Reliability & Calibration for Language Models",
         period: "2025 – Present",
         description:
-          "M.S. thesis research on DICE (Definition-Induced Calibration of Embeddings), an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions — no human-labeled data or large-scale retraining required. The method nearly doubles baseline performance on sentence-level (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8), and holds across model scale, pretraining-data volume, and pretraining objective. Grounded in LLM reliability: encoder representation quality directly governs RAG retrieval, making low-cost embedding repair a practical lever for reducing hallucination in production. Currently under submission.",
+          "M.S. thesis research on DICE, an annotation-free method that repairs language model embedding geometry using dictionary definitions — nearly doubling representation quality without any human-labeled data. Currently under submission.",
         tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
         featured: true,
+        slides: [
+          {
+            title: "Problem & Background",
+            body: "Encoder embedding quality directly governs RAG retrieval, and degraded representations — largely caused by MFS (most-frequent-sense) bias and embedding-space anisotropy — are a hidden driver of hallucination in production LLM systems. Repairing this cheaply, without new human-labeled data, is the core motivation behind DICE.",
+          },
+          {
+            title: "Methodology",
+            body: "DICE is an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions. A lightweight Bridge Layer (query-space projection) drives the improvement, and the method is architecture-general — validated across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective, using a reproducible pipeline spanning 7 task families and 4 language models (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness).",
+            imageUrl: "/research/diagram.png",
+            imageWidth: 3200,
+            imageHeight: 1200,
+          },
+          {
+            title: "Results",
+            body: "Sentence-level semantics (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8) improved by roughly 2x over the baseline. On genuine word-sense disambiguation (anti-MFS hard sets), DICE reached 55.3 macro-F1 versus a 0.0 MFS baseline — confirming real semantic understanding rather than frequency shortcuts.",
+          },
+        ],
       },
       {
         title: "Computer Vision & Human Motion Understanding",
@@ -293,20 +309,32 @@ export const content: Record<Locale, ContentShape> = {
       email: "sojeong.shin27@gmail.com",
       resumeUrl: "/resume.pdf",
       photoUrl: "/profile.png",
-      links: {
-        github: "https://github.com/yourhandle",
-        linkedin: "https://linkedin.com/in/yourhandle",
-        googleScholar: "https://scholar.google.com/citations?user=xxxx",
-      },
     },
     researchAreas: [
       {
         title: "언어 모델을 위한 임베딩 신뢰성 및 보정 연구",
         period: "2024 – 현재",
         description:
-          "석사 학위논문 연구인 DICE(Definition-Induced Calibration of Embeddings)는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 사람이 라벨링한 데이터나 대규모 재학습 없이도 문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8) 성능을 기준선 대비 거의 두 배로 향상시켰으며, 모델 규모·사전학습 데이터량·사전학습 목적함수에 관계없이 일관되게 적용됩니다. 인코더 표현 품질이 RAG 검색 품질을 직접 좌우한다는 점에서, 이 연구는 프로덕션 환경의 할루시네이션을 줄이는 저비용 임베딩 개선 방법으로서 LLM 신뢰성과 직결됩니다. 현재 투고 중입니다.",
+          "언어 모델의 임베딩 기하 구조를 사전 정의만으로 복원하는 무라벨 기법 DICE에 대한 석사 학위논문 연구로, 사람이 라벨링한 데이터 없이 표현 품질을 거의 두 배로 향상시켰습니다. 현재 투고 중입니다.",
         tags: ["LLM", "임베딩", "대조학습", "RAG"],
         featured: true,
+        slides: [
+          {
+            title: "문제 및 배경",
+            body: "인코더 임베딩 품질은 RAG 검색 품질을 직접 좌우하는데, MFS(최빈 의미) 편향과 임베딩 공간의 비등방성으로 인한 표현 품질 저하는 프로덕션 LLM 시스템에서 할루시네이션을 유발하는 숨은 원인입니다. 새로운 사람 라벨링 데이터 없이 이를 저비용으로 복원하는 것이 DICE 연구의 핵심 동기입니다.",
+          },
+          {
+            title: "방법론",
+            body: "DICE는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 경량 Bridge Layer(쿼리 공간 프로젝션)가 성능 향상을 이끌며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수에 걸쳐 검증된 아키텍처 범용적 방법입니다. SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 벤치마크를 통합한 재현 가능한 파이프라인으로 7개 태스크 유형과 4개 언어 모델에 걸쳐 평가했습니다.",
+            imageUrl: "/research/diagram.png",
+            imageWidth: 3200,
+            imageHeight: 1200,
+          },
+          {
+            title: "결과",
+            body: "문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8)를 기준선 대비 약 두 배로 향상시켰습니다. 실제 단어 의미 구분 능력을 검증하는 anti-MFS hard set에서는 MFS 기준선 0.0 대비 DICE가 55.3 macro-F1을 기록해, 빈도 기반 단축 경로가 아닌 진짜 의미 이해임을 확인했습니다.",
+          },
+        ],
       },
       {
         title: "컴퓨터 비전 및 인체 동작 이해",

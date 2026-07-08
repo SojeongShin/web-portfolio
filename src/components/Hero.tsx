@@ -8,12 +8,6 @@ export default function Hero() {
   const { locale } = useLocale();
   const { profile } = content[locale];
 
-  const socialLinks = [
-    { href: profile.links.github, label: "GitHub" },
-    { href: profile.links.googleScholar, label: "Google Scholar" },
-    { href: profile.links.linkedin, label: "LinkedIn" },
-  ];
-
   return (
     <section id="top" className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
       <Image
@@ -42,17 +36,6 @@ export default function Hero() {
         >
           {profile.email}
         </a>
-        {socialLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-indigo-600 hover:decoration-indigo-500 dark:text-zinc-400 dark:decoration-zinc-700 dark:hover:text-indigo-400"
-          >
-            {link.label}
-          </a>
-        ))}
       </div>
     </section>
   );
