@@ -105,8 +105,8 @@ export const content: Record<Locale, ContentShape> = {
         title: "Embedding Reliability & Calibration for Language Models",
         period: "2025 – Present",
         description:
-          "M.S. thesis research on DICE (Definition-Induced Calibration of Embeddings), an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions — no human-labeled data or large-scale retraining required. The method nearly doubles baseline performance on sentence-level (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8), and holds across model scale, pretraining-data volume, and pretraining objective. Grounded in LLM reliability: encoder representation quality directly governs RAG retrieval, making low-cost embedding repair a practical lever for reducing hallucination in production. Currently under submission to EMNLP 2026.",
-        tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG", "EMNLP 2026"],
+          "M.S. thesis research on DICE (Definition-Induced Calibration of Embeddings), an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions — no human-labeled data or large-scale retraining required. The method nearly doubles baseline performance on sentence-level (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8), and holds across model scale, pretraining-data volume, and pretraining objective. Grounded in LLM reliability: encoder representation quality directly governs RAG retrieval, making low-cost embedding repair a practical lever for reducing hallucination in production. Currently under submission.",
+        tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
         featured: true,
       },
       {
@@ -129,7 +129,7 @@ export const content: Record<Locale, ContentShape> = {
         title: "DICE: Definition-Induced Calibration of Embeddings for Language Models",
         label: "M.S. Thesis",
         authors: "Sojeong Shin",
-        venue: "Under submission — EMNLP 2026",
+        venue: "Under submission",
         year: 2026,
         tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
         links: {},
@@ -304,8 +304,8 @@ export const content: Record<Locale, ContentShape> = {
         title: "언어 모델을 위한 임베딩 신뢰성 및 보정 연구",
         period: "2024 – 현재",
         description:
-          "석사 학위논문 연구인 DICE(Definition-Induced Calibration of Embeddings)는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 사람이 라벨링한 데이터나 대규모 재학습 없이도 문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8) 성능을 기준선 대비 거의 두 배로 향상시켰으며, 모델 규모·사전학습 데이터량·사전학습 목적함수에 관계없이 일관되게 적용됩니다. 인코더 표현 품질이 RAG 검색 품질을 직접 좌우한다는 점에서, 이 연구는 프로덕션 환경의 할루시네이션을 줄이는 저비용 임베딩 개선 방법으로서 LLM 신뢰성과 직결됩니다. 현재 EMNLP 2026에 투고 중입니다.",
-        tags: ["LLM", "임베딩", "대조학습", "RAG", "EMNLP 2026"],
+          "석사 학위논문 연구인 DICE(Definition-Induced Calibration of Embeddings)는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 사람이 라벨링한 데이터나 대규모 재학습 없이도 문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8) 성능을 기준선 대비 거의 두 배로 향상시켰으며, 모델 규모·사전학습 데이터량·사전학습 목적함수에 관계없이 일관되게 적용됩니다. 인코더 표현 품질이 RAG 검색 품질을 직접 좌우한다는 점에서, 이 연구는 프로덕션 환경의 할루시네이션을 줄이는 저비용 임베딩 개선 방법으로서 LLM 신뢰성과 직결됩니다. 현재 투고 중입니다.",
+        tags: ["LLM", "임베딩", "대조학습", "RAG"],
         featured: true,
       },
       {
@@ -328,7 +328,7 @@ export const content: Record<Locale, ContentShape> = {
         title: "DICE: Definition-Induced Calibration of Embeddings for Language Models",
         label: "석사 학위논문",
         authors: "Sojeong Shin",
-        venue: "투고 중 — EMNLP 2026",
+        venue: "투고 중",
         year: 2026,
         tags: ["LLM", "임베딩", "대조학습", "RAG"],
         links: {},
