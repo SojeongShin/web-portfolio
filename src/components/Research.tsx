@@ -59,16 +59,37 @@ export default function Research() {
                 key={slide.title}
                 className="overflow-hidden rounded-xl border border-indigo-100 bg-white dark:border-indigo-900/60 dark:bg-zinc-950"
               >
-                {slide.imageUrl ? (
-                  <Image
-                    src={slide.imageUrl}
-                    alt={slide.title}
-                    width={slide.imageWidth ?? 1600}
-                    height={slide.imageHeight ?? 900}
-                    sizes="(max-width: 640px) 100vw, 768px"
-                    unoptimized={slide.imageUrl.endsWith(".svg")}
-                    className="h-auto w-full"
-                  />
+                {slide.images && slide.images.length > 0 ? (
+                  <div
+                    className={
+                      slide.images.length > 1
+                        ? "grid grid-cols-1 gap-3 p-3 sm:grid-cols-2"
+                        : ""
+                    }
+                  >
+                    {slide.images.map((image) => (
+                      <figure key={image.url} className="m-0">
+                        <Image
+                          src={image.url}
+                          alt={slide.title}
+                          width={image.width}
+                          height={image.height}
+                          sizes={
+                            slide.images!.length > 1
+                              ? "(max-width: 640px) 100vw, 460px"
+                              : "(max-width: 640px) 100vw, 768px"
+                          }
+                          unoptimized={image.url.endsWith(".svg")}
+                          className={`h-auto w-full ${slide.images!.length > 1 ? "rounded-lg border border-indigo-100 dark:border-indigo-900/60" : ""}`}
+                        />
+                        {image.caption && (
+                          <figcaption className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+                            {image.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    ))}
+                  </div>
                 ) : (
                   <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 text-xs text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600">
                     {ui.research.imagePlaceholder}

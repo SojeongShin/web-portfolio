@@ -11,12 +11,17 @@ export type Profile = {
   photoUrl: string;
 };
 
+export type SlideImage = {
+  url: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 export type ResearchSlide = {
   title: string;
   body: string;
-  imageUrl?: string;
-  imageWidth?: number;
-  imageHeight?: number;
+  images?: SlideImage[];
 };
 
 export type ResearchArea = {
@@ -104,20 +109,32 @@ export const content: Record<Locale, ContentShape> = {
         title: "Embedding Reliability & Calibration for Language Models",
         period: "2025 – Present",
         description:
-          "M.S. thesis research on DICE, an annotation-free method that repairs language model embedding geometry using dictionary definitions — nearly doubling representation quality without any human-labeled data. Currently under submission.",
-        tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
+          "M.S. thesis research on DICE, an annotation-free method that repairs language model embedding geometry using dictionary definitions — nearly doubling core semantic benchmarks with no human-labeled data. Currently under submission.",
+          tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
         featured: true,
         slides: [
           {
             title: "Problem & Background",
-            body: "Encoder embedding quality directly governs RAG retrieval, and degraded representations — largely caused by MFS (most-frequent-sense) bias and embedding-space anisotropy — are a hidden driver of hallucination in production LLM systems. Repairing this cheaply, without new human-labeled data, is the core motivation behind DICE.",
+            body: "Encoder embedding quality strongly influences RAG retrieval, and degraded representations — driven largely by MFS (most-frequent-sense) bias and embedding-space anisotropy — weaken the retrieval step that grounds LLMs against hallucination. Improving this representation quality cheaply, without new human-labeled data, is the core motivation behind DICE — especially in low-resource domains where such data is scarce.",
+            images: [
+              {
+                url: "/research/sense_conflation.png",
+                width: 1360,
+                height: 860,
+                caption: "A single embedding vector is pulled toward the most frequent sense.",
+              },
+              {
+                url: "/research/semcor-vs-dictionary.png",
+                width: 1360,
+                height: 744,
+                caption: "DICE uses dictionary definitions only — never a sense-annotated corpus.",
+              },
+            ],
           },
           {
             title: "Methodology",
             body: "DICE is an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions. A lightweight Bridge Layer (query-space projection) drives the improvement, and the method is architecture-general — validated across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective, using a reproducible pipeline spanning 7 task families and 4 language models (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness).",
-            imageUrl: "/research/diagram.svg",
-            imageWidth: 3200,
-            imageHeight: 1200,
+            images: [{ url: "/research/diagram.svg", width: 3200, height: 1200 }],
           },
           {
             title: "Results",
@@ -322,13 +339,25 @@ export const content: Record<Locale, ContentShape> = {
           {
             title: "문제 및 배경",
             body: "인코더 임베딩 품질은 RAG 검색 품질을 직접 좌우하는데, MFS(최빈 의미) 편향과 임베딩 공간의 비등방성으로 인한 표현 품질 저하는 프로덕션 LLM 시스템에서 할루시네이션을 유발하는 숨은 원인입니다. 새로운 사람 라벨링 데이터 없이 이를 저비용으로 복원하는 것이 DICE 연구의 핵심 동기입니다.",
+            images: [
+              {
+                url: "/research/sense_conflation.png",
+                width: 1360,
+                height: 860,
+                caption: "단일 임베딩 벡터가 최빈 의미(MFS) 쪽으로 쏠리는 현상.",
+              },
+              {
+                url: "/research/semcor-vs-dictionary.png",
+                width: 1360,
+                height: 744,
+                caption: "DICE는 의미 주석 코퍼스가 아닌 사전 정의만 사용합니다.",
+              },
+            ],
           },
           {
             title: "방법론",
             body: "DICE는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 경량 Bridge Layer(쿼리 공간 프로젝션)가 성능 향상을 이끌며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수에 걸쳐 검증된 아키텍처 범용적 방법입니다. SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 벤치마크를 통합한 재현 가능한 파이프라인으로 7개 태스크 유형과 4개 언어 모델에 걸쳐 평가했습니다.",
-            imageUrl: "/research/diagram.svg",
-            imageWidth: 3200,
-            imageHeight: 1200,
+            images: [{ url: "/research/diagram.svg", width: 3200, height: 1200 }],
           },
           {
             title: "결과",
