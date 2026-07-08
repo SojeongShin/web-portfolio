@@ -66,6 +66,7 @@ export default function Research() {
                     width={slide.imageWidth ?? 1600}
                     height={slide.imageHeight ?? 900}
                     sizes="(max-width: 640px) 100vw, 768px"
+                    unoptimized={slide.imageUrl.endsWith(".svg")}
                     className="h-auto w-full"
                   />
                 ) : (

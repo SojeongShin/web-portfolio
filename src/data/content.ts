@@ -115,7 +115,7 @@ export const content: Record<Locale, ContentShape> = {
           {
             title: "Methodology",
             body: "DICE is an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions. A lightweight Bridge Layer (query-space projection) drives the improvement, and the method is architecture-general — validated across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective, using a reproducible pipeline spanning 7 task families and 4 language models (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness).",
-            imageUrl: "/research/diagram.png",
+            imageUrl: "/research/diagram.svg",
             imageWidth: 3200,
             imageHeight: 1200,
           },
@@ -326,7 +326,7 @@ export const content: Record<Locale, ContentShape> = {
           {
             title: "방법론",
             body: "DICE는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 경량 Bridge Layer(쿼리 공간 프로젝션)가 성능 향상을 이끌며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수에 걸쳐 검증된 아키텍처 범용적 방법입니다. SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 벤치마크를 통합한 재현 가능한 파이프라인으로 7개 태스크 유형과 4개 언어 모델에 걸쳐 평가했습니다.",
-            imageUrl: "/research/diagram.png",
+            imageUrl: "/research/diagram.svg",
             imageWidth: 3200,
             imageHeight: 1200,
           },
