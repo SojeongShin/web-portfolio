@@ -18,24 +18,24 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex flex-col rounded-xl border border-zinc-200 p-6 transition-colors hover:border-indigo-300 dark:border-zinc-800 dark:hover:border-indigo-800"
+            className="flex flex-col rounded-xl border border-zinc-200 p-6 transition-colors hover:border-indigo-300"
           >
-            <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+            <h3 className="text-base font-semibold text-zinc-900">
               {project.title}
             </h3>
             {project.award && (
-              <span className="mt-2 inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-800 dark:bg-amber-950/40 dark:text-amber-400">
+              <span className="mt-2 inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-800">
                 {project.award}
               </span>
             )}
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">
               {project.description}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400"
+                  className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600"
                 >
                   {tag}
                 </span>
@@ -45,7 +45,7 @@ export default function Projects() {
               {project.links.demo && (
                 <a
                   href={project.links.demo}
-                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400"
+                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700"
                 >
                   {ui.links.demo}
                 </a>
@@ -55,7 +55,7 @@ export default function Projects() {
                   href={project.links.video}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400"
+                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700"
                 >
                   {ui.links.video}
                 </a>
@@ -63,7 +63,7 @@ export default function Projects() {
               {project.links.code && (
                 <a
                   href={project.links.code}
-                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400"
+                  className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-700"
                 >
                   {ui.links.code}
                 </a>

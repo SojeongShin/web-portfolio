@@ -19,21 +19,21 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-sm dark:border-zinc-800/80 dark:bg-zinc-950/80">
+    <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a
           href="#top"
-          className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+          className="text-sm font-semibold tracking-tight text-zinc-900"
         >
           {profile.name}
         </a>
         <div className="flex items-center gap-6">
-          <nav className="hidden gap-8 text-sm text-zinc-600 dark:text-zinc-400 sm:flex">
+          <nav className="hidden gap-8 text-sm text-zinc-600 sm:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
+                className="transition-colors hover:text-indigo-600"
               >
                 {item.label}
               </a>
@@ -42,7 +42,7 @@ export default function Header() {
           <button
             type="button"
             onClick={toggleLocale}
-            className="rounded-full border border-zinc-300 px-3 py-1.5 text-xs font-medium text-zinc-700 transition-colors hover:border-indigo-400 hover:text-indigo-600 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-indigo-600 dark:hover:text-indigo-400"
+            className="rounded-full border border-zinc-300 px-3 py-1.5 text-xs font-medium text-zinc-700 transition-colors hover:border-indigo-400 hover:text-indigo-600"
           >
             {uiText[locale].localeToggle}
           </button>

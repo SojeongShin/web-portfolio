@@ -17,14 +17,14 @@ export default function Skills() {
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {skills.map((group) => (
           <div key={group.category}>
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+            <h3 className="text-sm font-semibold text-zinc-900">
               {group.category}
             </h3>
             <div className="mt-3 flex flex-wrap gap-2">
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400"
+                  className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600"
                 >
                   {item}
                 </span>
