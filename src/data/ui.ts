@@ -5,16 +5,14 @@ export const uiText: Record<
   {
     nav: {
       research: string;
-      publications: string;
-      projects: string;
+      awards: string;
       experience: string;
       skills: string;
-      awards: string;
+      projects: string;
       contact: string;
     };
     sections: {
       research: { eyebrow: string; title: string };
-      publications: { eyebrow: string; title: string };
       projects: { eyebrow: string; title: string };
       experience: { eyebrow: string; title: string };
       skills: { eyebrow: string; title: string };
@@ -27,9 +25,8 @@ export const uiText: Record<
       hideDetails: string;
       imagePlaceholder: string;
     };
-    publications: { showDetails: string; hideDetails: string };
     experience: { educationLabel: string; teachingLabel: string; internationalLabel: string };
-    links: { paper: string; code: string; demo: string; video: string };
+    links: { code: string; demo: string; video: string };
     contact: { intro: string; emailMe: string; downloadCv: string };
     footer: string;
     localeToggle: string;
@@ -38,16 +35,14 @@ export const uiText: Record<
   en: {
     nav: {
       research: "Research",
-      publications: "Publications",
-      projects: "Projects",
+      awards: "Awards",
       experience: "Experience",
       skills: "Skills",
-      awards: "Awards",
+      projects: "Projects",
       contact: "Contact",
     },
     sections: {
       research: { eyebrow: "Focus", title: "Research" },
-      publications: { eyebrow: "Publications", title: "Papers" },
       projects: { eyebrow: "Projects", title: "Selected Work" },
       experience: { eyebrow: "Background", title: "Education & Experience" },
       skills: { eyebrow: "Toolbox", title: "Skills" },
@@ -60,13 +55,12 @@ export const uiText: Record<
       hideDetails: "Hide details",
       imagePlaceholder: "Image coming soon",
     },
-    publications: { showDetails: "Show details", hideDetails: "Hide details" },
     experience: {
       educationLabel: "Education",
       teachingLabel: "Teaching Experience",
       internationalLabel: "International Experience",
     },
-    links: { paper: "Paper", code: "Code", demo: "Demo", video: "Watch Video" },
+    links: { code: "Code", demo: "Demo", video: "Watch Video" },
     contact: {
       intro:
         "Open to research collaborations, internships, and full-time opportunities in AI/ML.",
@@ -79,16 +73,14 @@ export const uiText: Record<
   ko: {
     nav: {
       research: "연구",
-      publications: "논문",
-      projects: "프로젝트",
+      awards: "수상",
       experience: "경력",
       skills: "기술",
-      awards: "수상",
+      projects: "프로젝트",
       contact: "연락처",
     },
     sections: {
       research: { eyebrow: "집중 분야", title: "연구" },
-      publications: { eyebrow: "논문", title: "논문" },
       projects: { eyebrow: "프로젝트", title: "주요 프로젝트" },
       experience: { eyebrow: "배경", title: "학력 및 경력" },
       skills: { eyebrow: "도구", title: "기술 스택" },
@@ -101,13 +93,12 @@ export const uiText: Record<
       hideDetails: "상세 접기",
       imagePlaceholder: "이미지 추가 예정",
     },
-    publications: { showDetails: "상세 보기", hideDetails: "상세 접기" },
     experience: {
       educationLabel: "학력",
       teachingLabel: "교육 경력",
       internationalLabel: "국제 경험",
     },
-    links: { paper: "논문", code: "코드", demo: "데모", video: "영상 보기" },
+    links: { code: "코드", demo: "데모", video: "영상 보기" },
     contact: {
       intro: "AI/ML 분야의 연구 협업, 인턴십, 정규직 기회에 열려 있습니다.",
       emailMe: "이메일 보내기",

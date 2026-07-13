@@ -1,11 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Research from "@/components/Research";
-import Publications from "@/components/Publications";
-import Projects from "@/components/Projects";
+import Awards from "@/components/Awards";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-import Awards from "@/components/Awards";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,11 +15,10 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Research />
-        <Publications />
-        <Projects />
+        <Awards />
         <Experience />
         <Skills />
-        <Awards />
+        <Projects />
         <Contact />
       </main>
       <Footer />

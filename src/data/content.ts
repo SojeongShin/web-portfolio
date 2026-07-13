@@ -30,19 +30,8 @@ export type ResearchArea = {
   description: string;
   tags: string[];
   featured?: boolean;
+  paper?: { label: string; authors: string; venue: string };
   slides?: ResearchSlide[];
-};
-
-export type Publication = {
-  title: string;
-  label?: string;
-  authors: string;
-  venue: string;
-  year: number;
-  tags: string[];
-  links: { paper?: string; code?: string };
-  featured?: boolean;
-  details?: string[];
 };
 
 export type ProjectItem = {
@@ -81,7 +70,6 @@ export type SkillGroup = {
 export type ContentShape = {
   profile: Profile;
   researchAreas: ResearchArea[];
-  publications: Publication[];
   projects: ProjectItem[];
   education: EducationItem[];
   teaching: ExperienceItem[];
@@ -110,8 +98,13 @@ export const content: Record<Locale, ContentShape> = {
         period: "2025 – Present",
         description:
           "M.S. thesis research on DICE, an annotation-free method that repairs language model embedding geometry using dictionary definitions — nearly doubling core semantic benchmarks with no human-labeled data. Currently under submission.",
-          tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
+        tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
         featured: true,
+        paper: {
+          label: "M.S. Thesis",
+          authors: "Sojeong Shin",
+          venue: "Under submission",
+        },
         slides: [
           {
             title: "Problem & Background",
@@ -133,7 +126,7 @@ export const content: Record<Locale, ContentShape> = {
           },
           {
             title: "Methodology",
-            body: "DICE is an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions. A lightweight Bridge Layer (query-space projection) drives the improvement, and the method is architecture-general — validated across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective, using a reproducible pipeline spanning 7 task families and 4 language models (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness).",
+            body: "DICE is an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions. A lightweight Bridge Layer (query-space projection) drives the improvement, and the method is architecture-general — validated across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective, using a reproducible pipeline spanning 7 task families and 4 language models (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness). Tech stack: Python, PyTorch, HuggingFace Transformers, WordNet.",
             images: [{ url: "/research/diagram.svg", width: 3200, height: 1200 }],
           },
           {
@@ -155,27 +148,6 @@ export const content: Record<Locale, ContentShape> = {
         description:
           "Worked on time-series forecasting for solar energy production and CNN-based audio classification, focusing on signal decomposition and noise-robust feature engineering.",
         tags: ["Time Series", "Signal Processing", "CNN"],
-      },
-    ],
-    publications: [
-      {
-        title: "DICE: Definition-Induced Calibration of Embeddings for Language Models",
-        label: "M.S. Thesis",
-        authors: "Sojeong Shin",
-        venue: "Under submission",
-        year: 2026,
-        tags: ["LLM", "Embeddings", "Contrastive Learning", "RAG"],
-        links: {},
-        featured: true,
-        details: [
-          "Developed an annotation-free contrastive fine-tuning method that repairs encoder embedding geometry using WordNet dictionary definitions — no human-labeled data or large-scale retraining required.",
-          "Improved sentence-level semantics (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8), roughly doubling the baseline on each.",
-          "Traced the improvement to a lightweight Bridge Layer (query-space projection) through targeted ablations, and showed the method is architecture-general — holding across parameter scale (xsmall–base), pretraining-data volume (10%/100%), and pretraining objective.",
-          "Built a reproducible, backbone-independent evaluation pipeline across 7 task families and 4 language models, integrating standard public benchmarks (SemEval WSD scorer, WSD Hard Benchmark, STS, WiC, analogy, word similarity/relatedness).",
-          "Diagnosed MFS bias and embedding-space anisotropy as root causes of degraded representations, using anti-MFS hard sets to verify genuine disambiguation over frequency shortcuts (MFS baseline 0.0 vs. DICE 55.3 macro-F1).",
-          "Grounded the work in LLM reliability: encoder representation quality directly governs RAG retrieval, making low-cost embedding repair a practical lever for reducing hallucination in production.",
-          "Tech stack: Python, PyTorch, HuggingFace Transformers, WordNet, large-scale datasets.",
-        ],
       },
     ],
     projects: [
@@ -335,6 +307,11 @@ export const content: Record<Locale, ContentShape> = {
           "언어 모델의 임베딩 기하 구조를 사전 정의만으로 복원하는 무라벨 기법 DICE에 대한 석사 학위논문 연구로, 사람이 라벨링한 데이터 없이 표현 품질을 거의 두 배로 향상시켰습니다. 현재 투고 중입니다.",
         tags: ["LLM", "임베딩", "대조학습", "RAG"],
         featured: true,
+        paper: {
+          label: "석사 학위논문",
+          authors: "Sojeong Shin",
+          venue: "투고 중",
+        },
         slides: [
           {
             title: "문제 및 배경",
@@ -356,7 +333,7 @@ export const content: Record<Locale, ContentShape> = {
           },
           {
             title: "방법론",
-            body: "DICE는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 경량 Bridge Layer(쿼리 공간 프로젝션)가 성능 향상을 이끌며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수에 걸쳐 검증된 아키텍처 범용적 방법입니다. SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 벤치마크를 통합한 재현 가능한 파이프라인으로 7개 태스크 유형과 4개 언어 모델에 걸쳐 평가했습니다.",
+            body: "DICE는 WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법입니다. 경량 Bridge Layer(쿼리 공간 프로젝션)가 성능 향상을 이끌며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수에 걸쳐 검증된 아키텍처 범용적 방법입니다. SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 벤치마크를 통합한 재현 가능한 파이프라인으로 7개 태스크 유형과 4개 언어 모델에 걸쳐 평가했습니다. 기술 스택: Python, PyTorch, HuggingFace Transformers, WordNet.",
             images: [{ url: "/research/diagram.svg", width: 3200, height: 1200 }],
           },
           {
@@ -378,27 +355,6 @@ export const content: Record<Locale, ContentShape> = {
         description:
           "태양광 에너지 생산량 시계열 예측과 CNN 기반 오디오 분류 연구를 수행했으며, 신호 분해와 잡음에 강건한 특징 추출에 집중했습니다.",
         tags: ["시계열", "신호 처리", "CNN"],
-      },
-    ],
-    publications: [
-      {
-        title: "DICE: Definition-Induced Calibration of Embeddings for Language Models",
-        label: "석사 학위논문",
-        authors: "Sojeong Shin",
-        venue: "투고 중",
-        year: 2026,
-        tags: ["LLM", "임베딩", "대조학습", "RAG"],
-        links: {},
-        featured: true,
-        details: [
-          "사람이 라벨링한 데이터나 대규모 재학습 없이, WordNet 사전 정의를 활용해 인코더 임베딩의 기하학적 구조를 복원하는 무라벨(annotation-free) 대조학습 파인튜닝 기법을 개발했습니다.",
-          "문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8)를 각각 기준선 대비 약 두 배로 향상시켰습니다.",
-          "타겟 어블레이션을 통해 성능 향상의 원인이 경량 Bridge Layer(쿼리 공간 프로젝션)임을 규명했으며, 모델 규모(xsmall–base)·사전학습 데이터량(10%/100%)·사전학습 목적함수와 무관하게 일관되게 적용되는 아키텍처 범용적 방법임을 보였습니다.",
-          "SemEval WSD 스코어러, WSD Hard Benchmark, STS, WiC, 유추, 단어 유사도/연관성 등 표준 공개 벤치마크를 통합해 7개 태스크 유형과 4개 언어 모델에 걸쳐 재현 가능한 백본 독립적 평가 파이프라인을 구축했습니다.",
-          "MFS 편향과 임베딩 공간의 비등방성(anisotropy)이 표현 품질 저하의 근본 원인임을 진단했으며, anti-MFS hard set을 활용해 빈도 기반 단축 경로가 아닌 실제 의미 구분 능력을 검증했습니다 (MFS 기준선 0.0 대비 DICE 55.3 macro-F1).",
-          "인코더 표현 품질이 RAG 검색 품질을 직접 좌우한다는 점에서, 프로덕션 환경의 할루시네이션을 줄이는 저비용 임베딩 개선 방법으로서 LLM 신뢰성과 직결됩니다.",
-          "기술 스택: Python, PyTorch, HuggingFace Transformers, WordNet, 대규모 데이터셋.",
-        ],
       },
     ],
     projects: [

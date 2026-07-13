@@ -11,11 +11,10 @@ export default function Header() {
 
   const navItems = [
     { href: "#research", label: ui.nav.research },
-    { href: "#publications", label: ui.nav.publications },
-    { href: "#projects", label: ui.nav.projects },
+    { href: "#awards", label: ui.nav.awards },
     { href: "#experience", label: ui.nav.experience },
     { href: "#skills", label: ui.nav.skills },
-    { href: "#awards", label: ui.nav.awards },
+    { href: "#projects", label: ui.nav.projects },
     { href: "#contact", label: ui.nav.contact },
   ];
 

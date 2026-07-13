@@ -24,11 +24,21 @@ export default function Research() {
           <span className="rounded-full bg-indigo-600 px-3 py-1 text-xs font-medium text-white">
             {ui.research.currentFocus}
           </span>
+          {featured.paper && (
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-200 dark:bg-zinc-900 dark:text-indigo-300 dark:ring-indigo-800">
+              {featured.paper.label}
+            </span>
+          )}
           <span className="text-sm text-zinc-500 dark:text-zinc-400">{featured.period}</span>
         </div>
         <h3 className="mt-4 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
           {featured.title}
         </h3>
+        {featured.paper && (
+          <p className="mt-1 text-sm italic text-zinc-500 dark:text-zinc-500">
+            {featured.paper.authors} · {featured.paper.venue}
+          </p>
+        )}
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
           {featured.description}
         </p>
