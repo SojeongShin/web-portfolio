@@ -132,6 +132,33 @@ export const content: Record<Locale, ContentShape> = {
           {
             title: "Results",
             body: "Sentence-level semantics (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8) improved by roughly 2x over the baseline. On genuine word-sense disambiguation (anti-MFS hard sets), DICE reached 55.3 macro-F1 versus a 0.0 MFS baseline — confirming real semantic understanding rather than frequency shortcuts.",
+            images: [
+              {
+                url: "/research/results/3d_bank_deberta_base_heatmap.svg",
+                width: 784,
+                height: 288,
+                caption:
+                  "'bank' sense-similarity: the baseline collapses senses, DICE separates them into clear blocks.",
+              },
+              {
+                url: "/research/results/3d_bank_deberta_base_scatter3d.svg",
+                width: 648,
+                height: 331,
+                caption: "'bank' embeddings in 3D PCA: DICE pulls the three senses apart.",
+              },
+              {
+                url: "/research/results/3d_crane_deberta_base_heatmap.svg",
+                width: 785,
+                height: 304,
+                caption: "'crane' sense-similarity shows the same block structure after calibration.",
+              },
+              {
+                url: "/research/results/3d_crane_deberta_base_scatter3d.svg",
+                width: 647,
+                height: 331,
+                caption: "'crane' embeddings in 3D PCA, mirroring the separation seen for 'bank'.",
+              },
+            ],
           },
         ],
       },
@@ -339,6 +366,32 @@ export const content: Record<Locale, ContentShape> = {
           {
             title: "결과",
             body: "문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8)를 기준선 대비 약 두 배로 향상시켰습니다. 실제 단어 의미 구분 능력을 검증하는 anti-MFS hard set에서는 MFS 기준선 0.0 대비 DICE가 55.3 macro-F1을 기록해, 빈도 기반 단축 경로가 아닌 진짜 의미 이해임을 확인했습니다.",
+            images: [
+              {
+                url: "/research/results/3d_bank_deberta_base_heatmap.svg",
+                width: 784,
+                height: 288,
+                caption: "'bank'의 의미 유사도 히트맵: 기준선은 의미를 뭉뚱그리지만 DICE는 명확한 블록으로 분리합니다.",
+              },
+              {
+                url: "/research/results/3d_bank_deberta_base_scatter3d.svg",
+                width: 648,
+                height: 331,
+                caption: "'bank' 임베딩의 3D PCA: DICE 적용 후 세 가지 의미가 뚜렷이 갈라집니다.",
+              },
+              {
+                url: "/research/results/3d_crane_deberta_base_heatmap.svg",
+                width: 785,
+                height: 304,
+                caption: "'crane'의 의미 유사도 히트맵에서도 보정 후 동일한 블록 구조가 나타납니다.",
+              },
+              {
+                url: "/research/results/3d_crane_deberta_base_scatter3d.svg",
+                width: 647,
+                height: 331,
+                caption: "'crane' 임베딩의 3D PCA — 'bank'에서 본 것과 같은 분리 양상을 보입니다.",
+              },
+            ],
           },
         ],
       },
