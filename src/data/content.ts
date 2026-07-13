@@ -131,7 +131,7 @@ export const content: Record<Locale, ContentShape> = {
           },
           {
             title: "Results",
-            body: "Sentence-level semantics (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8) improved by roughly 2x over the baseline. On genuine word-sense disambiguation (anti-MFS hard sets), DICE reached 55.3 macro-F1 versus a 0.0 MFS baseline — confirming real semantic understanding rather than frequency shortcuts.",
+            body: "Sentence-level semantics (STS: 32.8 → 62.6 Spearman) and word-level semantics (similarity & relatedness: 26.5 → 61.8) improved by roughly 2x over the baseline. On genuine word-sense disambiguation (anti-MFS hard sets), DICE reached 55.3 macro-F1 versus a 0.0 MFS baseline — confirming real semantic understanding rather than frequency shortcuts. The figures below make this concrete: for ambiguous words like \"bank\" and \"crane,\" similarity heatmaps and 3D PCA projections show senses collapsed together under the baseline but cleanly separated into distinct clusters after DICE calibration.",
             images: [
               {
                 url: "/research/results/3d_bank_deberta_base_heatmap.svg",
@@ -365,7 +365,7 @@ export const content: Record<Locale, ContentShape> = {
           },
           {
             title: "결과",
-            body: "문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8)를 기준선 대비 약 두 배로 향상시켰습니다. 실제 단어 의미 구분 능력을 검증하는 anti-MFS hard set에서는 MFS 기준선 0.0 대비 DICE가 55.3 macro-F1을 기록해, 빈도 기반 단축 경로가 아닌 진짜 의미 이해임을 확인했습니다.",
+            body: "문장 수준 의미(STS: 32.8 → 62.6 Spearman)와 단어 수준 의미(유사도·연관성: 26.5 → 61.8)를 기준선 대비 약 두 배로 향상시켰습니다. 실제 단어 의미 구분 능력을 검증하는 anti-MFS hard set에서는 MFS 기준선 0.0 대비 DICE가 55.3 macro-F1을 기록해, 빈도 기반 단축 경로가 아닌 진짜 의미 이해임을 확인했습니다. 아래 그림은 이를 구체적으로 보여줍니다 — 'bank', 'crane'처럼 여러 의미를 가진 단어의 경우, 기준선에서는 의미들이 뭉쳐 있지만 DICE로 보정한 뒤에는 유사도 히트맵과 3D PCA 투영 모두에서 뚜렷이 분리된 군집으로 나뉩니다.",
             images: [
               {
                 url: "/research/results/3d_bank_deberta_base_heatmap.svg",
