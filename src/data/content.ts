@@ -329,7 +329,7 @@ export const content: Record<Locale, ContentShape> = {
     researchAreas: [
       {
         title: "언어 모델을 위한 임베딩 신뢰성 및 보정 연구",
-        period: "2024 – 현재",
+        period: "2025 – 현재",
         description:
           "언어 모델의 임베딩 기하 구조를 사전 정의만으로 복원하는 무라벨 기법 DICE에 대한 석사 학위논문 연구로, 사람이 라벨링한 데이터 없이 표현 품질을 거의 두 배로 향상시켰습니다. 현재 투고 중입니다.",
         tags: ["LLM", "임베딩", "대조학습", "RAG"],

@@ -43,7 +43,7 @@ export const uiText: Record<
     },
     sections: {
       research: { eyebrow: "Focus", title: "Research" },
-      projects: { eyebrow: "Projects", title: "Selected Work" },
+      projects: { eyebrow: "Projects", title: "Projects" },
       experience: { eyebrow: "Background", title: "Education & Experience" },
       skills: { eyebrow: "Toolbox", title: "Skills" },
       awards: { eyebrow: "Recognition", title: "Awards" },
@@ -83,7 +83,7 @@ export const uiText: Record<
     },
     sections: {
       research: { eyebrow: "집중 분야", title: "연구" },
-      projects: { eyebrow: "프로젝트", title: "주요 프로젝트" },
+      projects: { eyebrow: "프로젝트", title: "프로젝트" },
       experience: { eyebrow: "배경", title: "학력 및 경력" },
       skills: { eyebrow: "도구", title: "기술 스택" },
       awards: { eyebrow: "수상", title: "수상 내역" },
