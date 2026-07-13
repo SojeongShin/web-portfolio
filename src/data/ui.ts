@@ -27,7 +27,7 @@ export const uiText: Record<
     };
     experience: { educationLabel: string; teachingLabel: string; internationalLabel: string };
     links: { code: string; demo: string; video: string };
-    contact: { intro: string; emailMe: string; downloadCv: string };
+    contact: { intro: string; emailMe: string; downloadCv: string; copyEmail: string; copied: string };
     footer: string;
     localeToggle: string;
   }
@@ -66,6 +66,8 @@ export const uiText: Record<
         "Open to research collaborations, internships, and full-time opportunities in AI/ML.",
       emailMe: "Email me",
       downloadCv: "Download CV",
+      copyEmail: "Copy email",
+      copied: "Copied!",
     },
     footer: "Built with Next.js & Tailwind CSS.",
     localeToggle: "한국어",
@@ -103,6 +105,8 @@ export const uiText: Record<
       intro: "AI/ML 분야의 연구 협업, 인턴십, 정규직 기회에 열려 있습니다.",
       emailMe: "이메일 보내기",
       downloadCv: "이력서 다운로드",
+      copyEmail: "이메일 복사",
+      copied: "복사됨!",
     },
     footer: "Next.js와 Tailwind CSS로 제작되었습니다.",
     localeToggle: "English",

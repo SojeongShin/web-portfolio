@@ -89,7 +89,7 @@ export const content: Record<Locale, ContentShape> = {
       bio: "M.S. Computer Science student at Stony Brook University, researching embedding reliability and calibration for language models. Previously built and deployed computer-vision systems for real-world measurement and human motion understanding.",
       location: "Stony Brook, NY, USA",
       email: "sojeong.shin27@gmail.com",
-      resumeUrl: "/resume.pdf",
+      resumeUrl: "/Resume-SojeongShin.pdf",
       photoUrl: "/profile.png",
     },
     researchAreas: [
@@ -323,7 +323,7 @@ export const content: Record<Locale, ContentShape> = {
       bio: "Stony Brook University에서 컴퓨터공학 석사 과정을 밟고 있으며, 언어 모델의 임베딩 신뢰성과 보정(calibration)을 연구하고 있습니다. 이전에는 실세계 측정과 인간 동작 이해를 위한 컴퓨터 비전 시스템을 개발해 실제로 배포한 경험이 있으며, 다수의 수상 경력이 있습니다.",
       location: "미국 뉴욕주 스토니브룩",
       email: "sojeong.shin27@gmail.com",
-      resumeUrl: "/resume.pdf",
+      resumeUrl: "/Resume-SojeongShin.pdf",
       photoUrl: "/profile.png",
     },
     researchAreas: [
