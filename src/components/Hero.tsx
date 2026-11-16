@@ -1,24 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { content } from "@/data/content";
+import { uiText } from "@/data/ui";
 import { useLocale } from "@/i18n/locale-context";
 
 export default function Hero() {
   const { locale } = useLocale();
   const { profile } = content[locale];
+  const ui = uiText[locale];
 
   return (
     <section id="top" className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
-      <Image
-        src={profile.photoUrl}
-        alt={profile.name}
-        width={112}
-        height={112}
-        priority
-        className="h-28 w-28 rounded-full object-cover ring-1 ring-zinc-200"
-      />
-      <p className="mt-6 text-sm font-medium uppercase tracking-widest text-indigo-600">
+      <p className="text-sm font-medium uppercase tracking-widest text-indigo-600">
         {profile.title}
       </p>
       <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
@@ -29,12 +22,14 @@ export default function Hero() {
         {profile.bio}
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+      <div className="mt-8 flex flex-wrap items-center gap-4">
         <a
-          href={`mailto:${profile.email}`}
-          className="font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-indigo-500"
+          href={profile.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-indigo-700"
         >
-          {profile.email}
+          {ui.hero.viewCv}
         </a>
       </div>
     </section>

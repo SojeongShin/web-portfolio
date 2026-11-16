@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sojeong Shin — AI Researcher",
   description:
-    "AI researcher focused on large language models, embedding reliability, and computer vision.",
+    "AI researcher working on NLP, LLM embeddings, and evaluation design.",
 };
 
 export default function RootLayout({

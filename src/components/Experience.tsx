@@ -17,7 +17,7 @@ function ExperienceTimeline({ items }: { items: ExperienceItem[] }) {
             </h4>
             <span className="text-sm text-zinc-500">{item.org}</span>
           </div>
-          <p className="text-sm text-zinc-500">{item.period}</p>
+          {item.period && <p className="text-sm text-zinc-500">{item.period}</p>}
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-600">
             {item.description}
           </p>
@@ -29,7 +29,7 @@ function ExperienceTimeline({ items }: { items: ExperienceItem[] }) {
 
 export default function Experience() {
   const { locale } = useLocale();
-  const { education, teaching, international } = content[locale];
+  const { education, work, teaching, international } = content[locale];
   const ui = uiText[locale];
 
   return (
@@ -59,6 +59,11 @@ export default function Experience() {
           </div>
         ))}
       </div>
+
+      <h3 className="mt-12 text-sm font-semibold uppercase tracking-wider text-zinc-500">
+        {ui.experience.workLabel}
+      </h3>
+      <ExperienceTimeline items={work} />
 
       <h3 className="mt-12 text-sm font-semibold uppercase tracking-wider text-zinc-500">
         {ui.experience.teachingLabel}

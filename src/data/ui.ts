@@ -9,7 +9,6 @@ export const uiText: Record<
       experience: string;
       skills: string;
       projects: string;
-      contact: string;
     };
     sections: {
       research: { eyebrow: string; title: string };
@@ -17,17 +16,20 @@ export const uiText: Record<
       experience: { eyebrow: string; title: string };
       skills: { eyebrow: string; title: string };
       awards: { eyebrow: string; title: string };
-      contact: { eyebrow: string; title: string };
     };
     research: {
       currentFocus: string;
       showDetails: string;
       hideDetails: string;
-      imagePlaceholder: string;
     };
-    experience: { educationLabel: string; teachingLabel: string; internationalLabel: string };
+    experience: {
+      educationLabel: string;
+      workLabel: string;
+      teachingLabel: string;
+      internationalLabel: string;
+    };
     links: { code: string; demo: string; video: string };
-    contact: { intro: string; emailMe: string; downloadCv: string; copyEmail: string; copied: string };
+    hero: { viewCv: string };
     footer: string;
     localeToggle: string;
   }
@@ -39,7 +41,6 @@ export const uiText: Record<
       experience: "Experience",
       skills: "Skills",
       projects: "Projects",
-      contact: "Contact",
     },
     sections: {
       research: { eyebrow: "Focus", title: "Research" },
@@ -47,28 +48,20 @@ export const uiText: Record<
       experience: { eyebrow: "Background", title: "Education & Experience" },
       skills: { eyebrow: "Toolbox", title: "Skills" },
       awards: { eyebrow: "Recognition", title: "Awards" },
-      contact: { eyebrow: "Get in Touch", title: "Contact" },
     },
     research: {
       currentFocus: "Current Focus",
       showDetails: "Show details",
       hideDetails: "Hide details",
-      imagePlaceholder: "Image coming soon",
     },
     experience: {
       educationLabel: "Education",
+      workLabel: "Work & Academic Service",
       teachingLabel: "Teaching Experience",
       internationalLabel: "International Experience",
     },
     links: { code: "Code", demo: "Demo", video: "Watch Video" },
-    contact: {
-      intro:
-        "Open to research collaborations, internships, and full-time opportunities in AI/ML.",
-      emailMe: "Email me",
-      downloadCv: "Download CV",
-      copyEmail: "Copy email",
-      copied: "Copied!",
-    },
+    hero: { viewCv: "View CV (Korean, PDF)" },
     footer: "Built with Next.js & Tailwind CSS.",
     localeToggle: "한국어",
   },
@@ -79,7 +72,6 @@ export const uiText: Record<
       experience: "경력",
       skills: "기술",
       projects: "프로젝트",
-      contact: "연락처",
     },
     sections: {
       research: { eyebrow: "집중 분야", title: "연구" },
@@ -87,27 +79,20 @@ export const uiText: Record<
       experience: { eyebrow: "배경", title: "학력 및 경력" },
       skills: { eyebrow: "도구", title: "기술 스택" },
       awards: { eyebrow: "수상", title: "수상 내역" },
-      contact: { eyebrow: "연락하기", title: "연락처" },
     },
     research: {
       currentFocus: "현재 연구",
       showDetails: "상세 보기",
       hideDetails: "상세 접기",
-      imagePlaceholder: "이미지 추가 예정",
     },
     experience: {
       educationLabel: "학력",
+      workLabel: "경력 및 학술 활동",
       teachingLabel: "교육 경력",
       internationalLabel: "국제 경험",
     },
     links: { code: "코드", demo: "데모", video: "영상 보기" },
-    contact: {
-      intro: "AI/ML 분야의 연구 협업, 인턴십, 정규직 기회에 열려 있습니다.",
-      emailMe: "이메일 보내기",
-      downloadCv: "이력서 다운로드",
-      copyEmail: "이메일 복사",
-      copied: "복사됨!",
-    },
+    hero: { viewCv: "이력서 보기 (PDF)" },
     footer: "Next.js와 Tailwind CSS로 제작되었습니다.",
     localeToggle: "English",
   },

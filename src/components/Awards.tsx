@@ -26,7 +26,7 @@ export default function Awards() {
               </h3>
               <p className="mt-1 text-sm text-zinc-500">{award.org}</p>
             </div>
-            <span className="text-sm text-zinc-500">{award.period}</span>
+            {award.period && <span className="text-sm text-zinc-500">{award.period}</span>}
           </li>
         ))}
       </ul>

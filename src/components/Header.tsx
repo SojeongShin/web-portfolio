@@ -15,7 +15,6 @@ export default function Header() {
     { href: "#experience", label: ui.nav.experience },
     { href: "#skills", label: ui.nav.skills },
     { href: "#projects", label: ui.nav.projects },
-    { href: "#contact", label: ui.nav.contact },
   ];
 
   return (

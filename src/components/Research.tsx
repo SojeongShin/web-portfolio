@@ -69,7 +69,7 @@ export default function Research() {
                 key={slide.title}
                 className="overflow-hidden rounded-xl border border-indigo-100 bg-white"
               >
-                {slide.images && slide.images.length > 0 ? (
+                {slide.images && slide.images.length > 0 && (
                   <div
                     className={
                       slide.images.length > 1
@@ -99,10 +99,6 @@ export default function Research() {
                         )}
                       </figure>
                     ))}
-                  </div>
-                ) : (
-                  <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 text-xs text-zinc-400">
-                    {ui.research.imagePlaceholder}
                   </div>
                 )}
                 <div className="p-5">
