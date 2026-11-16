@@ -10,11 +10,10 @@ export default function Header() {
   const ui = uiText[locale];
 
   const navItems = [
-    { href: "#research", label: ui.nav.research },
-    { href: "#awards", label: ui.nav.awards },
-    { href: "#experience", label: ui.nav.experience },
-    { href: "#skills", label: ui.nav.skills },
     { href: "#projects", label: ui.nav.projects },
+    { href: "#experience", label: ui.nav.experience },
+    { href: "#awards", label: ui.nav.awards },
+    { href: "#skills", label: ui.nav.skills },
   ];
 
   return (
