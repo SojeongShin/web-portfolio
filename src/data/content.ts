@@ -381,6 +381,13 @@ export const content: Record<Locale, ContentShape> = {
           "Led lab sessions for introductory machine learning (transfer learning, CNNs) and robotics (reinforcement learning) courses.",
       },
       {
+        role: "Graduate Teaching Assistant",
+        org: "SUNY, Dept. of Computer Science",
+        period: "Aug 2024 – Jun 2025",
+        description:
+          "CSE101 (Fall 2024), CSE215, CSE216 (Spring 2025)",
+      },
+      {
         role: "English Conversation Instructor",
         org: "ICME",
         period: "Sep 2023 – Apr 2024",
@@ -698,6 +705,13 @@ export const content: Record<Locale, ContentShape> = {
         period: "2025년 7월",
         description:
           "전이학습·CNN을 다루는 머신러닝 입문 강의와 강화학습 중심의 로보틱스 강의에서 실습 세션을 진행했습니다.",
+      },
+      {
+        role: "대학원 조교 (Graduate Teaching Assistant)",
+        org: "SUNY, Dept. of Computer Science",
+        period: "2024년 8월 – 2025년 6월",
+        description:
+          "CSE101 (2024 가을), CSE215, CSE216 (2025 봄)",
       },
       {
         role: "영어 회화 강사",
